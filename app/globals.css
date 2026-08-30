@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Samadhan AI — Light Government Theme */
+    --background: 210 33% 98%;        /* #F7F9FC */
+    --foreground: 215 25% 27%;       /* #1F2937 */
+    --card: 0 0% 100%;                /* #FFFFFF */
+    --card-foreground: 215 25% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    --primary: 210 64% 22%;            /* #12355B navy */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 52% 94%;         /* #EAF3FB light blue */
+    --secondary-foreground: 210 64% 22%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;  /* #64748B */
+    --accent: 33 96% 50%;              /* #F59E0B saffron accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 74% 48%;          /* #C53030 danger */
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 68% 27%;           /* #16803C */
+    --warning: 40 71% 42%;             /* #B7791F */
+    --border: 210 32% 89%;             /* #D9E2EC */
+    --input: 210 32% 89%;
+    --ring: 210 64% 22%;
+    --radius: 0.5rem;
+    --chart-1: 210 64% 22%;
+    --chart-2: 210 52% 40%;
+    --chart-3: 33 96% 50%;
+    --chart-4: 142 68% 27%;
+    --chart-5: 0 74% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Leaflet map styling */
+.leaflet-container {
+  font-family: inherit;
+  border-radius: 0.5rem;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(18, 53, 91, 0.15);
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 4px 12px rgba(18, 53, 91, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
